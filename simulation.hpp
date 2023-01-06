@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <random>
+#include "patch.hpp"
 #include "parameters.hpp"
 
 class Simulation
@@ -28,12 +29,25 @@ class Simulation
         
         // uniform distribution to compare against probabilities
         std::uniform_real_distribution<double> uniform;
+        std::uniform_int_distribution <int> patch_sampler;
         
         Parameters params;
 
+        std::vector <Patch> metapopulation;
+
+        int generation = 0;
+
+        double payoff_matrix[2][2] = {{0.0,0.0},{0.0,0.0}};
     public:
         Simulation(Parameters const &params);
-        void write_parameters(std::ofstream &data_file);
+        void write_parameters();
+        void run();
+        void help_pairwise();
+        void pairwise_interact(int const patch_idx, int const ind1, int const ind2);
+        void mortality_replacement();
+        void reset_resources();
+        void write_data();
+        void write_data_headers();
 };
 
 #endif

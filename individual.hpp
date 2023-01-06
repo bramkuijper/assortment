@@ -9,6 +9,7 @@ class Individual
     public:
         bool is_coop;
 
+        double resources; // the amount of resources as a result of help
 
         Individual();
 

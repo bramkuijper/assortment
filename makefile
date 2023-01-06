@@ -1,5 +1,5 @@
-EXE=gardner_etal_2011.exe
-CPP=individual.cpp simulation.cpp gardner2011.cpp patch.cpp
+EXE=assortment.exe
+CPP=individual.cpp simulation.cpp main.cpp patch.cpp
 HPP=individual.hpp simulation.hpp parameters.hpp patch.hpp
 CXX=g++
 CXXFLAGS=-Wall -O3 -ggdb -std=c++17
